@@ -7,15 +7,25 @@
 # func2({50, 42}, 2) = 0,
 # func2({4, 13, 63, 87}, 4) = 1
 
-def func2(list, x):
-    for i in range(0, x):
-        for j in range(i+1, x):
-            if(list[i] + list[j] == 100): return 1
-    return 0
+# def func2(list, x):
+#     for i in range(0, x):
+#         for j in range(i+1, x):
+#             if(list[i] + list[j] == 100): return 1
+#     return 0
 
-print(func2([1, 52, 48], 3))
-print(func2([50, 42], 2))
+# print(func2([1, 52, 48], 3))
+# print(func2([50, 42], 2))
 
 # i가 0일 때 x-1 번 비교하고, i가 1일 때 x-2 번 비교하고, 
 # i가 x-2일 때 1번 비교하니 총 x-1번 반복이 진행된다. 
 # (x-1) + (x-2) + ... + 3 + 2 + 1 = x(x-1)/2 ==> O(N^2)
+
+# 리스트의 각각의 요소가 합이 100이 되는지 확인
+def func2(list, x):
+    for i in list:
+        j = 100 - i
+        if(list.count(j)): return 0 
+        else: return 1
+
+print(func2([1, 52, 48], 3))
+print(func2([50, 42], 2))
