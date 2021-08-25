@@ -35,3 +35,24 @@
 # 이 문제는 단순하다.
 # 각 행에서 가장 작은 수를 골라내고, 
 # 그 수들을 행마다 비교해서 가장 큰 수를 찾으면 된다.
+
+n, m = map(int, input().split())
+
+result = 0 
+for i in range(n):
+    data = list(map(int, input().split()))
+    min_value = min(data)
+    result = max(min_value, result)
+print(result)
+
+## 이중 for문으로 풀기
+n, m = map(int, input().split())
+
+result = 0
+for i in range(n):
+    data = list(map(int, input().split()))
+    min_value = 10001
+    for j in data:
+        min_value = min(min_value, j)
+    result = max(min_value, result)
+print(result)
