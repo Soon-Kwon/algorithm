@@ -45,4 +45,4 @@ for i in range(k):
         break
     else: a[i], b[i] = b[i], a[i]
 
-print(sum(a))1
+print(sum(a))
