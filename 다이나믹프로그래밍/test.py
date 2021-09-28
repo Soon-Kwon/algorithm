@@ -1,10 +1,5 @@
-d = [0] * 100
-
-d[1] = 1
-d[2] = 2
-n = 99
-
-for i in range(3, n + 1):
-    d[i] = d[i - 1] + d[i - 2]
-
-print(d[n])
+graph = [[] for i in range(10)]
+distance = [int(1e9)] * (10)
+graph[5] = [(2,3)]
+for j in graph[5]:
+    distance[j[0]] = j[1]
